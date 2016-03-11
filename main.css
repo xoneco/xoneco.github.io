@@ -1,0 +1,15 @@
+html, body {
+    background-color: #212121;
+    color: #FAFAFA;
+    font-family: Roboto;
+    height: 100%;
+}
+
+.container-table {
+    display: table;
+    height: 100%;
+}
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
