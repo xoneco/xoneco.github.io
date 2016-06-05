@@ -1,0 +1,54 @@
+<head>
+<style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+    <script src="locations.json.js"></script>
+</head>
+<body>
+<div id="map"></div>
+    <script>
+    //var jsondata
+    console.log(json_data);
+
+      function initMap() {
+        var myLatLng = {lat: 51.524756, lng: -0.133517}; // UCL Lat and Long
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 13,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+
+        for (var key in json_data) {
+          if (!json_data.hasOwnProperty(key)) { continue; }
+          // code;
+
+          marker_latlng = {lat: parseFloat(json_data[key]["latitude"]), lng: parseFloat(json_data[key]["longitude"])};
+
+          var marker = new google.maps.Marker({
+              position: marker_latlng,
+              animation: google.maps.Animation.BOUNCE,
+              title: json_data[key]["name"]
+          });
+
+          marker.setMap(map);
+          
+        }
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApVpGflDdIxGBwa6FH2iApmYwsWBdeUUA&callback=initMap">
+    </script>
+</body>
