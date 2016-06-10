@@ -24,18 +24,18 @@
               var allRooms = data;
 
               currentTime = moment(new Date());
-              endTime = currentTime.add(30, "minutes");
+              endTime = moment(new Date()).add(30, "minutes");
 
               freeRooms = []
               for(var i=0; i<allRooms.length; i++) {
 
                 bookings = allRooms[i]["diary"]
                 var roomIsFree = true;
-                for(var booking in bookings) {
-                  bookingStart = moment(booking["booking_start"]);
-                  bookingEnd = moment(booking["booking_end"]);
+                for(var k=0; k<bookings.length; k++) {
+                  bookingStart = moment(bookings[k]["booking_start"], "hh:mm");
+                  bookingEnd = moment(bookings[k]["booking_end"], "hh:mm");
 
-                  if (currentTime < bookingEnd && endTime > bookingStart) {
+                  if ((currentTime < bookingEnd && endTime > bookingStart)) {
                     roomIsFree = false;
                     break;
                   }
@@ -47,7 +47,6 @@
 
               }
 
-              console.log(freeRooms);
               var shortest_distance = Infinity;
               var best_room;
 
