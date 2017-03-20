@@ -1,0 +1,63 @@
+<head>
+<style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+    <script src="locations.json.js"></script>
+    <script src="estate_locations.js"></script>
+</head>
+<body>
+<div id="map"></div>
+    <script>
+
+      function initMap() {
+        var myLatLng = {lat: 51.524756, lng: -0.133517}; // UCL Lat and Long
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 13,
+          center: myLatLng
+        });
+
+        for (var key in json_data) {
+          if (!json_data.hasOwnProperty(key)) { continue; }
+
+          marker_latlng = {lat: parseFloat(json_data[key]["latitude"]), lng: parseFloat(json_data[key]["longitude"])};
+
+          var marker = new google.maps.Marker({
+              position: marker_latlng,
+              title: "Maps: " + json_data[key]["name"]
+          });
+
+          marker.setMap(map);
+
+        }
+
+        console.log(estate_rooms);
+        for (var room in estate_rooms) {
+          //if (!estate_rooms.hasOwnProperty(key)) { continue; }
+          if (estate_rooms[room]["location"]["coordinates"]) {
+            marker_latlng = {lat: parseFloat(estate_rooms[room]["location"]["coordinates"]["lat"]), lng: parseFloat(estate_rooms[room]["location"]["coordinates"]["lng"])};
+            console.log(estate_rooms[room]["location"]["coordinates"]["lat"]);
+            console.log(estate_rooms[room]["location"]["coordinates"]["lng"]);
+            var marker = new google.maps.Marker({
+                position: marker_latlng,
+                icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+                title: "Estates: " + estate_rooms[room]["roomname"]
+            });
+
+            marker.setMap(map);
+          }
+
+        }
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApVpGflDdIxGBwa6FH2iApmYwsWBdeUUA&callback=initMap">
+    </script>
+</body>
