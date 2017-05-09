@@ -3,10 +3,6 @@ language: node_js
 node_js:
 - 7.8.0
 
-before_install:
-- openssl aes-256-cbc -K $encrypted_675be29fedeb_key -iv $encrypted_675be29fedeb_iv
-  -in id_rsa.enc -out id_rsa -d
-
 install:
 - npm i -g yarn && yarn
 
@@ -16,18 +12,11 @@ before_script:
 script:
   - echo All tests pass, yay!
 
-after_sucess:
-- yarn run gh-pages-travis
-
-env:
-  global:
-  - DEPLOY_BRANCH="master"
-  - SOURCE_DIR="build"
-  - TARGET_BRANCH="gh-pages"
-  - SSH_KEY="id_rsa"
-  - GIT_NAME="travis-deployment"
-  - GIT_EMAIL="deploy@travis-ci.org"
-
-branches:
-  except:
-  - gh-pages
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  local_dir: build
+  target_branch: gh-pages
+  on:
+    branch: master
