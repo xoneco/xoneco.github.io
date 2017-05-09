@@ -1,0 +1,30 @@
+.site-wrapper {
+  // display: flex;
+  // flex-direction: column;
+  // min-height: 100%;
+  text-align: center;
+}
+
+.name {
+  font-size: 6em;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+
+.face {
+  animation: face-roll linear 3s infinite;
+  border-radius: 50px;
+  height: 100px;
+  margin: 25px auto;
+  width: 100px;
+
+  &:hover {
+    animation: face-roll linear 1s infinite;
+  }
+}
+
+@keyframes face-roll {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}

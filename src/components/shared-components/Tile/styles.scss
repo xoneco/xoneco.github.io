@@ -1,0 +1,44 @@
+$white: #fff;
+$black: #000;
+
+.tile {
+  align-items: center;
+  background-color: $white;
+  border-radius: 5px;
+  color: $black;
+  display: flex;
+  flex-basis: auto;
+  height: 250px;
+  margin: 25px;
+  padding: 5px;
+  text-align: center;
+  width: 250px;
+
+  &:hover {
+    opacity: .8;
+  }
+
+  img {
+    height: 64px;
+    margin-top: 10px;
+    width: 64px;
+  }
+
+  h2 {
+    margin-top: 10px;
+  }
+
+  a,
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: inherit;
+  }
+
+  .emoji {
+    font-size: 64px;
+  }
+}

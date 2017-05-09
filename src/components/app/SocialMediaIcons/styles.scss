@@ -1,0 +1,21 @@
+.social-media-icons-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  justify-content: center;
+  margin: 25px 0 50px;
+
+  a,
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: inherit;
+  }
+
+  >a {
+    margin: 0 25px;
+  }
+}
