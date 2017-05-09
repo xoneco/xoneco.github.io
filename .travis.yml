@@ -11,7 +11,7 @@ install:
 - npm i -g yarn && yarn
 
 before_script:
-- yarn production
+- yarn run production
 
 after_sucess:
 - yarn run gh-pages-travis
