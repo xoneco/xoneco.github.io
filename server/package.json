@@ -1,0 +1,19 @@
+{
+  "name": "wilhelm-klopp-location",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilhelmklopp/wilhelmklopp.git"
+  },
+  "author": "Wilhelm Klopp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wilhelmklopp/wilhelmklopp/issues"
+  },
+  "homepage": "https://github.com/wilhelmklopp/wilhelmklopp#readme",
+  "dependencies": {
+    "node-fetch": "^1.6.3",
+    "uuid": "^3.0.1"
+  }
+}
