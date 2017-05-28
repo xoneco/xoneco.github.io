@@ -1,0 +1,46 @@
+$white: #fff;
+$black: #000;
+
+.large-tile {
+  align-items: center;
+  background-color: $white;
+  border-radius: 5px;
+  color: $black;
+  display: flex;
+  flex-basis: auto;
+  height: 400px;
+  margin: 25px;
+  padding: 5px;
+  text-align: center;
+  width: 400px;
+  justify-content: center;
+
+  &:hover {
+    opacity: .8;
+  }
+
+  img {
+    height: 259px;
+    margin-top: 10px;
+    width: 242px;
+    margin-left: 60px;
+  }
+
+  h2 {
+    margin-top: 10px;
+  }
+
+  a,
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: inherit;
+  }
+
+  .emoji {
+    font-size: 64px;
+  }
+}
