@@ -35,6 +35,12 @@ class Projects extends Component {
           link="https://github.com/uclapi/veruto"
           emoji="🎓"
         />
+        <Tile
+          name="HtCtW Group Finder"
+          description={'Find your "How to Change the World" group before the programme starts.'}
+          link="https://github.com/wilhelmklopp/howtochangetheworld"
+          emoji="⚙"
+        />
       </div>
     );
   }
