@@ -14,7 +14,7 @@ class Projects extends Component {
         <Tile
           image={simplepoll}
           name="Simple Poll"
-          description="Simple, native polling for Slack. 15th most popular Slack integration."
+          description="Simple, native polling for Slack. 14th most popular Slack integration."
           link="https://simplepoll.rocks"
         />
         <Tile
