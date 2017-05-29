@@ -17,7 +17,7 @@ class Teams extends Component {
           description={'An API for student developers, that improves the UCL experience for all.'}
         />
         <Tile
-          link="https://techsoc.io"
+          link="http://techsoc.io"
           image={techsoc}
           name="UCLU TechSoc"
           description={'The Tech Society at University College London. (Served as President in 2016/2017)'}
