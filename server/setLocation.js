@@ -2,6 +2,7 @@ const AWS = require('aws-sdk'); // eslint-disable-line import/no-extraneous-depe
 
 const uuid = require('uuid');
 const fetch = require('node-fetch');
+const emojiFlags = require('emoji-flags');
 
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 
@@ -21,7 +22,7 @@ module.exports.setLocation = (event, context, callback) => {
       } else if (addressComponents[i].types.indexOf('postal_town') > -1) {
         requiredComponents.postalTown = addressComponents[i].long_name;
       } else if (addressComponents[i].types.indexOf('locality') > -1) {
-        requiredComponents.Locality = addressComponents[i].long_name;
+        requiredComponents.locality = addressComponents[i].long_name;
       }
     }
 
@@ -31,6 +32,10 @@ module.exports.setLocation = (event, context, callback) => {
       publicLocationString = `${requiredComponents.locality}, ${requiredComponents.country}`;
     } else if (requiredComponents.postalTown) {
       publicLocationString = `${requiredComponents.postalTown}, ${requiredComponents.country}`;
+    }
+
+    if (emojiFlags.countryCode(requiredComponents.country)) {
+      publicLocationString += ` ${emojiFlags.countryCode(requiredComponents.country).emoji}`;
     }
 
     const params = {
