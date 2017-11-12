@@ -25,7 +25,7 @@ class Location extends Component {
     return (
       <div className="location">
         <Choose>
-          <When condition={this.state.location === 'London, GB'}>
+          <When condition={this.state.location.includes('London, GB')}>
             <span>{'Live in London, where I also currently am.'}</span>
           </When>
           <Otherwise>
