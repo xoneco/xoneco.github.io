@@ -3,6 +3,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { HotModuleReplacementPlugin } from 'webpack';
 import OfflinePlugin from 'offline-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+import ManifestPlugin from 'webpack-manifest-plugin';
 
 const defaultEnv = {
   dev: true,
@@ -19,7 +20,7 @@ export default (env = defaultEnv) => ({
   ],
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'bundle.js',
+    filename: 'bundle.[hash].js',
   },
   resolve: {
     extensions: ['.jsx', '.js'],
@@ -39,6 +40,7 @@ export default (env = defaultEnv) => ({
       { from: 'distance', to: 'distance' },
       { from: 'free', to: 'free' },
     ]),
+    new ManifestPlugin(),
   ],
   module: {
     rules: [
