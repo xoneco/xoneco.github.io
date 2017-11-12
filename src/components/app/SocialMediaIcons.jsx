@@ -1,32 +1,37 @@
 import React from 'react';
-import FontAwesome from 'react-fontawesome';
+
+import fontawesome from '@fortawesome/fontawesome';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import brands from '@fortawesome/fontawesome-free-brands';
 
 import './SocialMediaIcons/styles.scss';
+
+fontawesome.library.add(brands);
 
 const SocialMediaIcons = () => {
   return (
     <div className="social-media-icons-container">
       <a href="https://twitter.com/wilhelmklopp">
-        <FontAwesome
-          name="twitter"
+        <FontAwesomeIcon
+          icon={['fab', 'twitter']}
           size="2x"
         />
       </a>
       <a href="https://github.com/wilhelmklopp">
-        <FontAwesome
-          name="github"
+        <FontAwesomeIcon
+          icon={['fab', 'github']}
           size="2x"
         />
       </a>
       <a href="https://linkedin.com/in/wilhelmklopp">
-        <FontAwesome
-          name="linkedin"
+        <FontAwesomeIcon
+          icon={['fab', 'linkedin']}
           size="2x"
         />
       </a>
       <a href="https://medium.com/@wilhelmklopp">
-        <FontAwesome
-          name="medium"
+        <FontAwesomeIcon
+          icon={['fab', 'medium']}
           size="2x"
         />
       </a>

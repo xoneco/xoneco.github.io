@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome": "^0.0.21",
+    "@fortawesome/fontawesome-free-brands": "^0.0.18",
+    "@fortawesome/react-fontawesome": "^0.0.12",
     "font-awesome": "^4.7.0",
     "prop-types": "^15.5.8",
-    "react-fontawesome": "^1.6.1",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
     "react-hot-loader": "next"
