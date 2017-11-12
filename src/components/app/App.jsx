@@ -9,7 +9,6 @@ import SocialMediaIcons from './SocialMediaIcons';
 import Teams from './Teams';
 import Random from './Random';
 import Location from './Location';
-import CurrentOccupation from './CurrentOccupation';
 
 function App() {
   return (
@@ -18,7 +17,6 @@ function App() {
       <h1 className="name">Wilhelm Klopp</h1>
       <Location />
       <SocialMediaIcons />
-      <CurrentOccupation />
       <Projects />
       <Teams />
       <Random />
