@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import './Projects/styles.scss';
 
+import fieldDay from './Projects/images/field-day-logo-only.png';
 import simplepoll from './Projects/images/simplepoll.png';
 import slackrank from './Projects/images/slackrank.png';
 
@@ -11,6 +12,12 @@ class Projects extends Component {
   render() {
     return (
       <div className="projects">
+        <Tile
+          image={fieldDay}
+          name="GitHub Field Day"
+          description="An unconference for leaders of technical student communities"
+          link="https://githubfieldday.com"
+        />
         <Tile
           image={simplepoll}
           name="Simple Poll"
