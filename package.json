@@ -5,9 +5,9 @@
   "dependencies": {
     "font-awesome": "^4.7.0",
     "prop-types": "^15.5.8",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
     "react-fontawesome": "^1.6.1",
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0",
     "react-hot-loader": "next"
   },
   "devDependencies": {
