@@ -21,30 +21,30 @@ class Projects extends Component {
         <Tile
           image={simplepoll}
           name="Simple Poll"
-          description="Simple, native polling for Slack. 10th most popular Slack integration."
+          description="Simple, native polling for Slack. 10th most popular Slack integration"
           link="https://simplepoll.rocks"
         />
         <Tile
           image={slackrank}
           name="Slack Rank"
-          description="Historically ranks the 100 most popular Slack integrations."
+          description="Historically ranks the 100 most popular Slack integrations"
           link="https://slackrank.wilhelmklopp.com"
         />
         <Tile
           name="RBcalendar"
-          description="Turn UCL room bookings into ics calendar events."
+          description="Turn UCL room bookings into ics calendar events"
           link="https://rbcalendar.uclapi.com"
           emoji="📅"
         />
         <Tile
           name="Veruto"
-          description="Mobile app to find the closest free room in UCL."
+          description="Mobile app to find the closest free room in UCL"
           link="https://github.com/uclapi/veruto"
           emoji="🎓"
         />
         <Tile
           name="HtCtW Group Finder"
-          description={'Find your "How to Change the World" group before the programme starts.'}
+          description={'Find your "How to Change the World" group before the programme starts'}
           link="https://github.com/wilhelmklopp/howtochangetheworld"
           emoji="⚙"
         />
