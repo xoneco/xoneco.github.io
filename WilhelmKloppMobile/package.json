@@ -7,10 +7,10 @@
 		"test": "jest"
 	},
 	"dependencies": {
-		"react": "16.0.0-alpha.6",
-		"react-native": "0.44.0",
-		"react-native-background-job": "^1.2.3",
-		"react-native-dotenv": "^0.0.4"
+		"react": "16.3.1",
+		"react-native": "0.55.4",
+		"react-native-background-job": "^2.1.1",
+		"react-native-dotenv": "^0.1.1"
 	},
 	"devDependencies": {
 		"babel-jest": "20.0.0",

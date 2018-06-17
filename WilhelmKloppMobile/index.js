@@ -7,7 +7,7 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  TouchableHighlight,
+  TouchableOpacity,
   StyleSheet,
   Text,
   View,
@@ -26,7 +26,7 @@ function updateLocation() {
   navigator.geolocation.getCurrentPosition(
     (position) => {
       console.log(position);
-      fetch(`${API_DOMAIN}/location`, {
+      fetch(`https://${API_DOMAIN}/location`, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -67,35 +67,13 @@ const styles = StyleSheet.create({
 });
 
 export default class WilhelmKloppMobile extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { jobs: [] };
-  }
-
-  componentDidMount() {
-    this.getAll();
-  }
-
-  getAll() {
-    BackgroundJob.getAll({
-      callback: (jobs) => {
-        this.setState({ jobs });
-        console.log('Jobs:', jobs);
-      },
-    });
-  }
-
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
           {'Wilhelm Klopp: Update Location service'}
         </Text>
-        <Text>
-          Scheduled jobs:
-          {this.state.jobs.map(({ jobKey }) => jobKey)}
-        </Text>
-        <TouchableHighlight
+        <TouchableOpacity
           style={styles.button}
           onPress={() => {
             BackgroundJob.schedule({
@@ -104,28 +82,26 @@ export default class WilhelmKloppMobile extends Component {
               timeout: 60000,
               networkType: BackgroundJob.NETWORK_TYPE_ANY,
             });
-            this.getAll();
           }}
         >
           <Text>Schedule</Text>
-        </TouchableHighlight>
-        <TouchableHighlight
+        </TouchableOpacity>
+        <TouchableOpacity
           style={styles.button}
           onPress={() => {
             BackgroundJob.cancelAll();
-            this.getAll();
           }}
         >
           <Text>CancelAll</Text>
-        </TouchableHighlight>
-        <TouchableHighlight
+        </TouchableOpacity>
+        <TouchableOpacity
           style={styles.button}
           onPress={() => {
             updateLocation();
           }}
         >
           <Text>Update Location Now</Text>
-        </TouchableHighlight>
+        </TouchableOpacity>
       </View>
     );
   }
