@@ -17,9 +17,6 @@ function App() {
       <h1 className="name">Wilhelm Klopp</h1>
       <Location />
       <SocialMediaIcons />
-      <Projects />
-      <Teams />
-      <Random />
     </div>
   );
 }
