@@ -14,7 +14,7 @@
   "homepage": "https://github.com/wilhelmklopp/wilhelmklopp#readme",
   "dependencies": {
     "emoji-flags": "^1.2.0",
-    "node-fetch": "^1.6.3",
+    "node-fetch": "^2.6.1",
     "uuid": "^3.0.1"
   }
 }
